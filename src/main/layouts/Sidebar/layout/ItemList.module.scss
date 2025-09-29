@@ -1,0 +1,49 @@
+.simplebar_content {
+    // padding: 10px 0px;
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: rgb(232 237 247);
+
+    .simplebar_list {
+        padding-top: 1.3rem;
+        padding-bottom: 1.3rem;
+        padding-left: 40px;
+        padding-right: 23px;
+    }
+
+    ul {
+        display: block;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        position: relative;
+    }
+
+    .item_active {
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.359);
+        border-right: 2px solid rgb(49, 255, 22);
+    }
+
+    .item {
+        color: rgb(232 237 247);
+        position: relative;
+        display: block;
+        padding-left: 40px;
+        padding-right: 23px;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        font-size: 0.875rem;
+        text-decoration: none;
+
+        span {
+            font-size: 14px;
+            margin-right: 1.2rem;
+        }
+    }
+}
