@@ -3,9 +3,6 @@ import style from './Sidebar.module.scss';
 
 export const Sidebar = () => {
 
-    // -> https://themewagon.github.io/DattaAble/dashboard/index.html
-    // -> https://themewagon.github.io/Mantis-Vue/dashboard
-
     const { clinicIcon, Content } = ItemList();
 
     return (
