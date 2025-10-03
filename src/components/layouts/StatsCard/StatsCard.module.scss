@@ -1,0 +1,42 @@
+@use '/src/scss/styles/' as *;
+
+.col_span_6 {
+    grid-column: span 3 / span 3;
+}
+
+.card {
+    @include card-style;
+}
+
+.card_header {
+    border-bottom-width: 0px !important;
+    border-color: rgba(241, 241, 241, 0.734);
+    padding-bottom: 0px !important;
+
+    h6 {
+        @include h6-style;
+    }
+}
+
+.card_body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+        font-size: 2em;
+    }
+}
+
+.progress_bar {
+    height: 6px;
+    border-radius: 4px;
+    background-color: #e0e0e0;
+    overflow: hidden;
+
+    .fill {
+        height: 100%;
+        border-radius: 4px;
+        transition: width 0.3s ease;
+    }
+}
