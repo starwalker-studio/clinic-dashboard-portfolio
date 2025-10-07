@@ -13,6 +13,20 @@ export type TableProps<T> = {
     itemsPerPage?: number;
 }
 
+export type LineChartProps = {
+  title: string;
+  labels: string[];
+  values: number[];
+  color?: string;
+}
+
+export type BarChartProps = {
+  title: string;
+  labels: string[];
+  values: number[];
+  color?: string;
+}
+
 interface IPERSON {
     id: number;
     name: string;
@@ -25,6 +39,5 @@ export interface IDOCTORS extends IPERSON {
 }
 
 export interface IPATIENTS extends IPERSON {
-    age: number;
-    gender: string;
+    isActive: boolean;
 }

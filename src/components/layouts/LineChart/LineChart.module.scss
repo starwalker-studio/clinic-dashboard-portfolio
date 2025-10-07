@@ -1,0 +1,11 @@
+@use '/src/scss/styles/' as *;
+
+.card {
+  @include card-style;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.title {
+  @include title-style;
+}

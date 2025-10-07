@@ -30,6 +30,20 @@
     }
 }
 
+.title {
+  @include title-style;
+}
+
+.status_active {
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+.status_inactive {
+  color: #ef6c00;
+  font-weight: 600;
+}
+
 .noData {
     text-align: center;
     padding: 16px;

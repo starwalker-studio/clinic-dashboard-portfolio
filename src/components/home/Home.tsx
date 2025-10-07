@@ -1,7 +1,9 @@
+import { BarChart } from '../layouts/BarChart/BarChart';
+import { LineChart } from '../layouts/LineChart/LineChart';
 import { StatsCard } from '../layouts/StatsCard/StatsCard';
 import { Table } from '../layouts/Table/Table';
-import { DOCTORS, PATIENTS, TABLE_DOCTOR_HEADERS, TABLE_PATIENTS_HEADERS } from '../ts/clinic-data';
-import type { IDOCTORS, IPATIENTS } from '../ts/layouts-types';
+import { PATIENTS, TABLE_PATIENTS_HEADERS } from '../ts/clinic-data';
+import type { IPATIENTS } from '../ts/layouts-types';
 import style from './Home.module.scss';
 
 export const Home = () => {
@@ -18,10 +20,23 @@ export const Home = () => {
       </div>
       <div className={style.flex_wrap}>
         <div className={style.col_wide_left}>
-          <Table<IDOCTORS> title={TABLE_DOCTOR_HEADERS} data={DOCTORS} excludeKeys={["id"]} itemsPerPage={3} />
+          <BarChart
+            title="Citas por Mes"
+            labels={["Enero", "Febrero", "Marzo", "Abril", "Mayo"]}
+            values={[12, 19, 8, 15, 22]}
+          />
         </div>
         <div className={style.col_wide_right}>
-          <Table<IPATIENTS> title={TABLE_PATIENTS_HEADERS} data={PATIENTS} excludeKeys={["id"]} itemsPerPage={3} />
+          <LineChart
+            title="Crecimiento de Pacientes"
+            labels={["Enero", "Febrero", "Marzo", "Abril", "Mayo"]}
+            values={[5, 9, 14, 18, 25]}
+          />
+        </div>
+      </div>
+      <div className={style.flex_wrap}>
+        <div className={style.table_container}>
+          <Table<IPATIENTS> title={TABLE_PATIENTS_HEADERS} data={PATIENTS} excludeKeys={["id"]} itemsPerPage={8}/>
         </div>
       </div>
     </>

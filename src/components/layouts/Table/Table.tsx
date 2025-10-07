@@ -1,30 +1,25 @@
-import { useState } from 'react';
+import { useTable } from '../../hooks/useTable';
 import type { TableProps } from '../../ts/layouts-types';
 import style from './Table.module.scss';
 
 export const Table = <T extends object>({ data, title, excludeKeys = [], itemsPerPage = 5 }: TableProps<T>) => {
 
-    const [currentPage, setCurrentPage] = useState(1);
-
-    const headers = (Object.keys(data[0]) as (keyof T)[]).filter(
-        (key) => !excludeKeys.includes(key)
-    );
-
-    const totalPages = Math.ceil(data.length / itemsPerPage);
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const paginatedData = data.slice(startIndex, startIndex + itemsPerPage);
-
-    const handlePrev = () => {
-        setCurrentPage((prev) => Math.max(prev - 1, 1));
-    };
-
-    const handleNext = () => {
-        setCurrentPage((prev) => Math.min(prev + 1, totalPages));
-    };
+    const {
+        headers,
+        handleNext,
+        handlePrev,
+        paginatedData,
+        renderCell,
+        currentPage,
+        totalPages
+    } = useTable<T>(excludeKeys, data, itemsPerPage);
 
     return (
         <>
             <div className={style.card}>
+                <div>
+                    <h3 className={style.title}>Pacientes</h3>
+                </div>
                 <div className={style.table_wrapper}>
                     <table>
                         <thead>
@@ -38,7 +33,7 @@ export const Table = <T extends object>({ data, title, excludeKeys = [], itemsPe
                             {paginatedData.map((row, rowIndex) => (
                                 <tr key={rowIndex}>
                                     {headers.map((header, colIndex) => (
-                                        <td key={colIndex}>{String(row[header])}</td>
+                                        <td key={colIndex}>{renderCell(header, row[header])}</td>
                                     ))}
                                 </tr>
                             ))}

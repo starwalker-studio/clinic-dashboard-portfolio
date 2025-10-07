@@ -14,28 +14,24 @@
     column-gap: 1.5rem;
 }
 
-
-
-// .card_flex {
-//     display: flex;
-//     justify-content: space-between;
-// }
-
-
 .flex_wrap {
     display: flex;
-    // flex-wrap: wrap;
-    // justify-content: space-between;
+    flex-wrap: nowrap; // nunca se apilan
+    overflow-x: auto; // si no caben, aparece scroll horizontal
+    gap: 1.5rem; // espacio entre charts
     width: 100%;
-    // margin: -12px;
 }
 
-.col_wide_left {    
+.col_wide_left {
     width: 100%;
-    padding-right: 1.6ex;
 }
 
-.col_wide_right {    
+.col_wide_right {
     width: 100%;
-    padding-left: 1.6ex;
+}
+
+.table_container {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
 }
