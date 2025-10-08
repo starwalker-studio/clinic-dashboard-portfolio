@@ -14,17 +14,25 @@ export type TableProps<T> = {
 }
 
 export type LineChartProps = {
-  title: string;
-  labels: string[];
-  values: number[];
-  color?: string;
+    title: string;
+    labels: string[];
+    values: number[];
+    color?: string;
 }
 
 export type BarChartProps = {
-  title: string;
-  labels: string[];
-  values: number[];
-  color?: string;
+    title: string;
+    labels: string[];
+    values: number[];
+    color?: string;
+}
+
+export interface EventData {
+    id: string;
+    title: string;
+    start: string;
+    end?: string;
+    color?: string;
 }
 
 interface IPERSON {

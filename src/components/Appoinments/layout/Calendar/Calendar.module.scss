@@ -1,0 +1,38 @@
+.calendar_container {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 1.5rem;
+
+    .fc {
+        font-family: 'Inter', sans-serif;
+    }
+
+    .fc-toolbar-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #333;
+    }
+
+    .fc-button-primary {
+        background-color: #4caf50 !important;
+        border: none !important;
+        transition: 0.3s ease;
+
+        &:hover {
+            background-color: #388e3c !important;
+        }
+    }
+
+    .fc-daygrid-event {
+        border-radius: 8px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        padding: 3px 6px;
+    }
+
+    .fc-day-today {
+        background-color: rgba(76, 175, 80, 0.1) !important;
+    }
+}
