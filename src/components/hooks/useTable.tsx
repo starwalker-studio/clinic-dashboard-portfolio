@@ -23,9 +23,9 @@ export const useTable = <T extends object>(excludeKeys: (string | number | symbo
     const renderCell = (header: keyof T, value: T[keyof T]) => {
         if (header === "isActive") {
             return value ? (
-                <span className={style.status_active}>Dado de alta</span>
+                <span className={`${style.status_active} ${style.badge}`}>Dado de alta</span>
             ) : (
-                <span className={style.status_inactive}>En consulta</span>
+                <span className={`${style.status_inactive} ${style.badge}`}>En consulta</span>
             );
         }
         return String(value);

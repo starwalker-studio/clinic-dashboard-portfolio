@@ -6,6 +6,11 @@
 
 .card {
     @include card-style;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.295);
+    }
 }
 
 .card_header {

@@ -1,0 +1,22 @@
+@use '/src/scss/styles/' as *;
+
+.activity_container {
+    @include padding-left-right;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    width: 100%;
+    
+    // > div {
+    //     flex: 1;
+    // }
+    
+}
+
+
+.header_style {
+    @include padding-left-right;
+    @include header-style;
+}

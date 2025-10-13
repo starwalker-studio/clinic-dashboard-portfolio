@@ -1,0 +1,53 @@
+@use '/src/scss/styles/' as *;
+
+.summary_flex {
+    @include padding-left-right;
+    // padding-top: 4px;
+    display: flex;
+    column-gap: 1.5rem;
+    width: 100%;
+    flex-wrap: wrap; // nunca se apilan
+    overflow-x: auto;
+    overflow: hidden;
+}
+
+.card_content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+
+    h2 {
+        margin: 0;
+        font-size: 1rem;
+    }
+
+    span {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+}
+
+.summary_flex > div {
+    flex: 1 1 220px; // cada card mínimo 220px
+}
+
+.all_appmnts_style {
+    @include card-style;
+    @include summary-card-style(rgba(255, 115, 0, 0.274));    
+}
+
+.complete_style {
+    @include card-style;
+    @include summary-card-style(rgba(9, 255, 0, 0.418));
+}
+
+.cancel_style {
+    @include card-style;
+    @include summary-card-style(rgba(255, 0, 0, 0.253));
+}
+
+.on_course_style {
+    @include card-style;
+    @include summary-card-style(rgba(0, 195, 255, 0.384));
+}

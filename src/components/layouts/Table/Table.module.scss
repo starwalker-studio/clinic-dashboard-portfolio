@@ -31,17 +31,24 @@
 }
 
 .title {
-  @include title-style;
+    @include title-style;
+}
+
+.badge {
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    text-transform: capitalize;
+    color: #fff;
+    font-weight: 700;
 }
 
 .status_active {
-  color: #2e7d32;
-  font-weight: 600;
+    background-color: #00b336;
 }
 
 .status_inactive {
-  color: #ef6c00;
-  font-weight: 600;
+    background-color: #ef8f00;
 }
 
 .noData {

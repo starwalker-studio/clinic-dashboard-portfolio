@@ -1,0 +1,10 @@
+@use '/src/scss/styles/' as *;
+
+.header_style {
+    @include padding-left-right;
+    @include header-style;
+}
+
+.table_container {
+    @include padding-left-right;
+}

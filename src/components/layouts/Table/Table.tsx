@@ -18,7 +18,7 @@ export const Table = <T extends object>({ data, title, excludeKeys = [], itemsPe
         <>
             <div className={style.card}>
                 <div>
-                    <h3 className={style.title}>Pacientes</h3>
+                    <h3 className={style.title}>Lista de Pacientes</h3>
                 </div>
                 <div className={style.table_wrapper}>
                     <table>

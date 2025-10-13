@@ -1,12 +1,10 @@
 .dashboard_container {
     position: relative;
-    top: 74px;
+    top: 40px;
     min-height: calc(100vh - 135px);
     margin-left: 264px;
 }
 
 .dashboard_content {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-    padding-top: 1.25rem;
+    padding: 2rem;
 }

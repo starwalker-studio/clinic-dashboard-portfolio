@@ -1,0 +1,62 @@
+@use '/src/scss/styles/' as *;
+
+.table_container {
+    @include contanier-style;
+    flex: 2;
+    width: 100%;
+
+    h2 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+
+    th {
+        padding: 0.7rem;
+        font-size: 0.95rem;
+        color: #333;
+        border-bottom: 2px solid #ddd;
+    }
+
+    td {
+        padding: 0.7rem;
+        font-size: 0.9rem;
+        border-bottom: 1px solid #eee;
+    }
+
+    tr:hover {
+        background-color: rgba(240, 240, 240, 0.4);
+    }
+}
+
+/* 🏷️ Badges visuales por estado */
+.badge {
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    text-transform: capitalize;
+    color: #fff;
+    font-weight: 600;
+}
+
+.pendiente {
+    background-color: #0077b6;
+}
+
+.en_curso {
+    background-color: #ffb703;
+}
+
+.completada {
+    background-color: #00b37e;
+}
+
+.cancelada {
+    background-color: #e63946;
+}

@@ -1,4 +1,5 @@
-import type { IDOCTORS, IPATIENTS } from "./layouts-types";
+import type { IDOCTORS, IEVENTSDATA, IPATIENTS, IUPCOMINGAPPOINTMENT } from "./layouts-types";
+import dayjs from "dayjs";
 
 export const TABLE_DOCTOR_HEADERS: string[] = ["Nombre", "Especialidad", "Teléfono", "Correo"];
 
@@ -51,4 +52,130 @@ export const APPOINTMENTS = [
   { id: 8, patientId: 5, doctorId: 6, date: "2025-10-03", time: "10:30", status: "Confirmada" },
   { id: 9, patientId: 10, doctorId: 9, date: "2025-10-04", time: "09:30", status: "Pendiente" },
   { id: 10, patientId: 9, doctorId: 10, date: "2025-10-04", time: "11:00", status: "Completada" }
+];
+
+const today = dayjs();
+
+export const EVENTS_DATA: IEVENTSDATA[] = [
+  {
+    id: "1",
+    title: "Consulta con Dr. Ramírez",
+    start: today.hour(9).minute(0).second(0).toISOString(),
+    end: today.hour(10).minute(0).second(0).toISOString(),
+    color: "#4caf50",
+  },
+  {
+    id: "2",
+    title: "Chequeo general - Paciente Pérez",
+    start: today.add(1, "day").hour(11).minute(0).second(0).toISOString(),
+    end: today.add(1, "day").hour(12).minute(0).second(0).toISOString(),
+    color: "#2196f3",
+  },
+  {
+    id: "3",
+    title: "Revisión de laboratorio",
+    start: today.add(2, "day").hour(15).minute(0).second(0).toISOString(),
+    color: "#f44336",
+  },
+  {
+    id: "4",
+    title: "Seguimiento - Paciente López",
+    start: today.add(3, "day").hour(10).minute(0).toISOString(),
+    end: today.add(3, "day").hour(11).minute(0).toISOString(),
+    color: "#9c27b0",
+  },
+  {
+    id: "5",
+    title: "Control de presión arterial",
+    start: today.add(4, "day").hour(8).minute(30).toISOString(),
+    end: today.add(4, "day").hour(9).minute(0).toISOString(),
+    color: "#ff9800",
+  },
+  {
+    id: "6",
+    title: "Cirujía arterial",
+    start: today.add(8, "day").hour(7).minute(40).toISOString(),
+    end: today.add(8, "day").hour(10).minute(0).toISOString(),
+    color: "#ff00aaff",
+  },
+  {
+    id: "7",
+    start: today.set("date", 15).startOf("day").format("YYYY-MM-DD"),
+    end: today.set("date", 18).startOf("day").format("YYYY-MM-DD"),
+    display: "background",
+    backgroundColor: "#c41d2eff",
+  },
+  {
+    id: "8",
+    start: today.set("date", 24).startOf("day").format("YYYY-MM-DD"),
+    end: today.set("date", 29).startOf("day").format("YYYY-MM-DD"),
+    display: "background",
+    backgroundColor: "#65abdaff",
+  },
+  {
+    id: "9",
+    daysOfWeek: [0, 6], // 0 = domingo, 6 = sábado
+    display: "background",
+    backgroundColor: "#E0E0E0",
+  },
+  // puedes duplicar o generar más simulando distintos días/horas
+];
+
+export const MOCK_UPCOMING: IUPCOMINGAPPOINTMENT[] = [
+  {
+    id: 1,
+    paciente: "María López",
+    medico: "Dr. Hernández",
+    fecha: "10 Oct, 08:30 AM",
+    estado: "pendiente",
+  },
+  {
+    id: 2,
+    paciente: "Carlos Díaz",
+    medico: "Dra. Martínez",
+    fecha: "10 Oct, 09:15 AM",
+    estado: "en_curso",
+  },
+  {
+    id: 3,
+    paciente: "Ana Pérez",
+    medico: "Dr. Ramírez",
+    fecha: "10 Oct, 10:00 AM",
+    estado: "completada",
+  },
+  {
+    id: 4,
+    paciente: "José Torres",
+    medico: "Dra. López",
+    fecha: "10 Oct, 10:45 AM",
+    estado: "cancelada",
+  },
+  {
+    id: 5,
+    paciente: "Laura Gómez",
+    medico: "Dr. Castillo",
+    fecha: "10 Oct, 11:30 AM",
+    estado: "pendiente",
+  },
+  {
+    id: 6,
+    paciente: "Miguel Sánchez",
+    medico: "Dra. Morales",
+    fecha: "10 Oct, 12:15 PM",
+    estado: "en_curso",
+  },
+  {
+    id: 7,
+    paciente: "Paula Rivera",
+    medico: "Dr. Fernández",
+    fecha: "10 Oct, 01:00 PM",
+    estado: "completada",
+  },
+  {
+    id: 8,
+    paciente: "Ricardo Navarro",
+    medico: "Dra. Jiménez",
+    fecha: "10 Oct, 02:00 PM",
+    estado: "pendiente",
+  },
 ];
