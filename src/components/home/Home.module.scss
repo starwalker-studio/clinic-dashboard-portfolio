@@ -23,6 +23,7 @@
     overflow: hidden;
     padding-left: 12px;
     padding-right: 12px;
+    margin-top: 1.5rem;
 }
 
 .col_wide_left {
@@ -34,7 +35,53 @@
 }
 
 .table_container {
-    width: 100%;
-    margin-bottom: 1.5rem;
-    margin-top: 1.5rem;
+    width: 100%;    
+}
+
+.no_pointer_table_ev {
+    pointer-events: none;
+}
+
+.header_section {
+    display: flex;
+    align-items: center;
+    // justify-content: space-between; // separa el título y el enlace
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.link {
+    font-size: 0.95rem;
+    color: #0077b6; // azul médico
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    &::after {
+        content: "›";
+        font-size: 1.1rem;
+        color: #0077b6;
+        transition: transform 0.2s ease;
+    }
+
+    &:hover {
+        color: #023e8a;
+
+        &::after {
+            transform: translateX(3px); // sutil movimiento al pasar el cursor
+        }
+    }
+
+    &:active {
+        opacity: 0.7;
+    }
+}
+
+.title {
+    @include title-style;
+    margin: 0;
 }

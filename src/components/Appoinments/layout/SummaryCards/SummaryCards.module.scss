@@ -6,9 +6,10 @@
     display: flex;
     column-gap: 1.5rem;
     width: 100%;
-    flex-wrap: wrap; // nunca se apilan
+    flex-wrap: wrap;
     overflow-x: auto;
     overflow: hidden;
+    margin-bottom: 1.8rem;
 }
 
 .card_content {
@@ -29,7 +30,7 @@
 }
 
 .summary_flex > div {
-    flex: 1 1 220px; // cada card mínimo 220px
+    flex: 1 1 220px;
 }
 
 .all_appmnts_style {

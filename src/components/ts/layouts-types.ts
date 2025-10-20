@@ -1,4 +1,5 @@
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+import type { ReactNode, SetStateAction } from "react";
 
 export type StatsCardProps = {
     title: string;
@@ -12,6 +13,8 @@ export type TableProps<T> = {
     data: T[];
     excludeKeys?: (keyof T)[];
     itemsPerPage?: number;
+    setData?: (e: SetStateAction<T | undefined>) => void;
+    pagination?: boolean;
 }
 
 export type LineChartProps = {
@@ -33,6 +36,21 @@ export type SummaryCardsProps = {
     complete: number;
     cancel: number;
     on_course: number;
+}
+
+export type DisplayTableProps<T> = {
+    children: ReactNode;
+    data?: T;
+    dataFilter: T[];
+    isDoctor?: boolean;
+    setPerson?: (e: SetStateAction<T | undefined>) => void;
+}
+
+export type SearchBoxProps<T> = {
+    value: string;
+    results: T[];
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onSelect: (item: T) => void;
 }
 
 export interface ActivityPanelProps {
@@ -78,17 +96,26 @@ export interface IEVENTSDATA {
     color?: string;
 }
 
-interface IPERSON {
+export interface IPERSON {
     id: number;
     name: string;
     phone: string;
     email: string;
 }
 
-export interface IDOCTORS extends IPERSON {
-    specialty: string;
+export interface IPATIENTS extends IPERSON {
+    kind: "patient";
+    isActive: boolean;
+    edad: number;
+    genero: "Masculino" | "Femenino";
+    motivoConsulta: string;
+    diagnostico: string;
+    ultimaVisita: string;
+    proximaCita: string;
+    status: "activo" | "en_curso" | "inactivo";
 }
 
-export interface IPATIENTS extends IPERSON {
-    isActive: boolean;
+export interface IDOCTORS extends IPERSON {
+    kind: "doctor";
+    specialty: string;
 }

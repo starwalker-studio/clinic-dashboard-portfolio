@@ -2,6 +2,8 @@
 
 .card {
     @include card-style;
+    cursor: pointer;
+    padding: 5ex;
 }
 
 .table_wrapper {
@@ -11,7 +13,7 @@
     table {
         width: 100%;
         border-collapse: collapse;
-        font-size: 0.95rem;
+        font-size: 0.87rem;
         text-align: left;
 
         thead {
@@ -30,25 +32,21 @@
     }
 }
 
-.title {
-    @include title-style;
-}
-
 .badge {
     padding: 0.3rem 0.6rem;
     border-radius: 6px;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     text-transform: capitalize;
     color: #fff;
     font-weight: 700;
 }
 
 .status_active {
-    background-color: #00b336;
+    background-color: #00942c;
 }
 
 .status_inactive {
-    background-color: #ef8f00;
+    background-color: #c97800;
 }
 
 .noData {

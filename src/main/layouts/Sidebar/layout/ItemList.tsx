@@ -1,12 +1,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStaffSnake } from '@fortawesome/free-solid-svg-icons';
-import { faGauge } from '@fortawesome/free-solid-svg-icons';
-import { faCalendar } from '@fortawesome/free-solid-svg-icons';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { faBriefcaseMedical } from '@fortawesome/free-solid-svg-icons';
-import { faChartLine } from '@fortawesome/free-solid-svg-icons';
-import { faLock } from '@fortawesome/free-solid-svg-icons';
-import { faGear } from '@fortawesome/free-solid-svg-icons';
+import {
+    faStaffSnake,
+    faGauge,
+    faCalendar,
+    faUser,
+    faBriefcaseMedical,
+    faChartLine,
+    faLock,
+    faGear
+} from '@fortawesome/free-solid-svg-icons';
 import style from './ItemList.module.scss';
 import { NavLink } from 'react-router-dom';
 import type { ClassValue, MenuItems } from '../../ts/menuItems';
@@ -20,7 +22,7 @@ export const ItemList = () => {
     const briefcase = <FontAwesomeIcon icon={faBriefcaseMedical} />
     const chartline = <FontAwesomeIcon icon={faChartLine} />
     const login = <FontAwesomeIcon icon={faLock} />
-    const gear = <FontAwesomeIcon icon={faGear} />    
+    const gear = <FontAwesomeIcon icon={faGear} />
 
     const menuItems: MenuItems[] = [
         { id: 1, path: "", label: "Navegación" },

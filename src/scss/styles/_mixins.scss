@@ -22,8 +22,7 @@
 @mixin card-style {
     width: 100%;
     padding: 20px;
-    position: relative;
-    margin-bottom: 1.5rem;
+    position: relative;    
     background-color: rgba(255, 255, 255, 0.7);
     --tw-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.151);
     --tw-shadow-colored: 0 1px 20px 0 var(--tw-shadow-color);

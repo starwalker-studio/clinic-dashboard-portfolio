@@ -1,17 +1,35 @@
+import { useState } from 'react';
 import { Table } from '../layouts/Table/Table';
 import { PATIENTS, TABLE_PATIENTS_HEADERS } from '../ts/clinic-data';
 import type { IPATIENTS } from '../ts/layouts-types';
-import style from './Pacients.module.scss';
+import { DisplayTable } from '../layouts/DisplayTable/DisplayTable';
 
 export const Pacients = () => {
+
+  const [patient, setPatient] = useState<IPATIENTS | undefined>();
+
   return (
     <>
-      <div className={style.header_style}>
-        <h5>Pacientes</h5>
-      </div>
-      <div className={style.table_container}>
-        <Table<IPATIENTS> title={TABLE_PATIENTS_HEADERS} data={PATIENTS} excludeKeys={["id"]} itemsPerPage={8} />
-      </div>
+      <DisplayTable<IPATIENTS>
+        data={patient}
+        dataFilter={PATIENTS}
+        setPerson={e => setPatient(e)}>
+        <Table<IPATIENTS>
+          title={TABLE_PATIENTS_HEADERS}
+          data={PATIENTS}
+          excludeKeys={["id",
+            "motivoConsulta",
+            "isActive",
+            "diagnostico",
+            "ultimaVisita",
+            "proximaCita",
+            "status",
+            "kind"
+          ]}
+          itemsPerPage={10}
+          setData={e => setPatient(e)}
+          pagination={true} />
+      </DisplayTable>
     </>
   )
 }
