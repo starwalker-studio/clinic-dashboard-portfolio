@@ -50,7 +50,8 @@ export const Home = () => {
               excludeKeys={
                 [
                   "id",
-                  "status"
+                  "status",
+                  "kind"
                 ]
               }
               itemsPerPage={6} />
@@ -69,7 +70,7 @@ export const Home = () => {
             <Table<IDOCTORS>
               title={TABLE_DOCTOR_HEADERS}
               data={DOCTORS}
-              excludeKeys={["id"]}
+              excludeKeys={["id", "kind"]}
               itemsPerPage={6} />
           </div>
         </div>
