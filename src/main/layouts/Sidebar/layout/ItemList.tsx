@@ -6,8 +6,7 @@ import {
     faUser,
     faBriefcaseMedical,
     faChartLine,
-    faLock,
-    faGear
+    faLock
 } from '@fortawesome/free-solid-svg-icons';
 import style from './ItemList.module.scss';
 import { NavLink } from 'react-router-dom';
@@ -22,19 +21,17 @@ export const ItemList = () => {
     const briefcase = <FontAwesomeIcon icon={faBriefcaseMedical} />
     const chartline = <FontAwesomeIcon icon={faChartLine} />
     const login = <FontAwesomeIcon icon={faLock} />
-    const gear = <FontAwesomeIcon icon={faGear} />
 
     const menuItems: MenuItems[] = [
         { id: 1, path: "", label: "Navegación" },
         { id: 2, path: "/", label: "Dashboard", icon: home },
         { id: 3, path: "/pacientes", label: "Pacientes", icon: person },
-        { id: 4, path: "/citas", label: "Citas", icon: calendar },
-        { id: 5, path: "", label: "Información" },
         { id: 6, path: "/medicos", label: "Médicos", icon: briefcase },
+        { id: 5, path: "", label: "Información" },
+        { id: 4, path: "/citas", label: "Citas", icon: calendar },
         { id: 7, path: "/estadisticas", label: "Estadísticas", icon: chartline },
         { id: 8, path: "", label: "Autenticación" },
-        { id: 9, path: "/login", label: "Login", icon: login },
-        { id: 10, path: "/ajustes", label: "Ajustes", icon: gear },
+        { id: 9, path: "/login", label: "Login", icon: login }
     ];
 
     function classNames(...classes: ClassValue[]): string {

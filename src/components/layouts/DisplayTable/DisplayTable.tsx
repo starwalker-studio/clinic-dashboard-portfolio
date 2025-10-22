@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { faStaffSnake } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { NavLink } from 'react-router';
 import type { DisplayTableProps, IDOCTORS, IPATIENTS } from '../../ts/layouts-types';
 import { useDebounce } from '../../hooks/useDebounde';
 import { SearchBox } from '../SearchBox/SearchBox';
@@ -47,15 +46,12 @@ export const DisplayTable = <T extends IPATIENTS | IDOCTORS>({ data, isDoctor = 
                             onSelect={handleSelect}
                         />
                     </div>
-                    <NavLink to="/" className={style.link}>
-                        Ir a inicio
-                    </NavLink>
                 </div>
             </div>
             <div className={style.table_container}>
                 <div className={`${style.container_flex} ${data ? style.container_display : ''}`}>
                     <div className={style.table_display}>{children}</div>
-                    <div className={`${style.patient_card} ${data ? style.visible : ""}`}>
+                    <div className={`${style.person_card} ${data ? style.visible : ""}`}>
                         <div className={style.icon_background}>
                             <span><FontAwesomeIcon icon={faStaffSnake} /></span>
                         </div>

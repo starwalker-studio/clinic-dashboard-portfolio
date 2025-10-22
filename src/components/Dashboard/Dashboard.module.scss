@@ -3,6 +3,12 @@
     top: 40px;
     min-height: calc(100vh - 135px);
     margin-left: 264px;
+    transform: translateX(0px);
+    transition: all 0.3s ease;
+    
+    &.wide_dashboard {
+        transform: translateX(-240px);
+    }
 }
 
 .dashboard_content {

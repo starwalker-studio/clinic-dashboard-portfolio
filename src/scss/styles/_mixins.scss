@@ -6,7 +6,7 @@
 @mixin contanier-style {
     background-color: #fff;
     padding: 2rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);    
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 @mixin header-style {
@@ -22,14 +22,14 @@
 @mixin card-style {
     width: 100%;
     padding: 20px;
-    position: relative;    
+    position: relative;
     background-color: rgba(255, 255, 255, 0.7);
     --tw-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.151);
     --tw-shadow-colored: 0 1px 20px 0 var(--tw-shadow-color);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
     user-select: none;
     cursor: default;
-    transition: all 0.2s ease;    
+    transition: all 0.2s ease;
 }
 
 @mixin h6-style {
@@ -67,5 +67,74 @@
     &:hover {
         font-size: 1.5em;
         transform: scale(1.02);
+    }
+}
+
+@mixin person-card-style {
+    flex: 1;
+    min-width: 320px;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transform: translateX(20px);
+    pointer-events: none;
+    transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+@mixin badge-background-color($color) {
+    background-color: $color;
+}
+
+@mixin icon-background-style {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.15;
+    font-size: 20em;
+    color: #1e90ff;
+    filter: blur(4px);
+    pointer-events: none;
+    z-index: 1;
+}
+
+@mixin search-bar-style {
+    display: flex;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1.5rem;
+    height: 74px;
+
+    span {
+        margin-right: 2ex;
+        font-size: 2.3ex;
+    }
+
+    .input_wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        span {
+            position: absolute;
+            left: 10px;
+            color: #aaa;
+        }
+
+        input {
+            font-size: 2ex;
+            padding: 2ex 2ex 2ex 5ex;
+            border-radius: 8px;
+            width: 22em;
+            height: 5ex;
+            border: solid 1px #b9b4b4;
+
+            &:focus {
+                outline: none;
+                box-shadow: 0 0 .5em #363636d0;
+            }
+        }
     }
 }

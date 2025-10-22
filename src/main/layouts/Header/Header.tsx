@@ -1,12 +1,14 @@
+// import { type SetStateAction } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { faBell } from '@fortawesome/free-solid-svg-icons';
-import { faMoon } from '@fortawesome/free-solid-svg-icons';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faUser, faBell, faMoon, faSearch } from '@fortawesome/free-solid-svg-icons';
 import style from './Header.module.scss';
 
-export const Header = () => {
+type HeaderProps = {
+    handleOpenCloseSideBar: () => void;
+    close?: boolean;
+}
+
+export const Header = ({ handleOpenCloseSideBar, close }: HeaderProps) => {
 
     const bars = <FontAwesomeIcon icon={faBars} />
     const user = <FontAwesomeIcon icon={faUser} />
@@ -15,14 +17,14 @@ export const Header = () => {
     const search = <FontAwesomeIcon icon={faSearch} />
 
     return (
-        <header className={style.desktop_header}>
+        <header className={`${style.desktop_header}${close ? style.wide_header : ''}`}>
             <div className={style.header_wrapper}>
                 <div className={style.search_bar_container}>
                     <div className={style.search_bar_wrapper}>
-                        <span>{bars}</span>
+                        <span style={{ cursor: 'pointer' }} onClick={() => handleOpenCloseSideBar()}>{bars}</span>
                         <div className={style.input_wrapper}>
                             <span>{search}</span>
-                            <input type="text" placeholder='Buscar'/>
+                            <input type="text" placeholder='Buscar' />
                         </div>
                     </div>
                 </div>

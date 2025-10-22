@@ -1,13 +1,20 @@
+@use '/src/scss/styles/' as *;
+
 .desktop_header {
     position: fixed;
     z-index: 1025;
     display: flex;
+    width: 100%;
     height: 74px;
-    background-color: rgba(244, 247, 250, 0.753);
+    background-color: rgba(198, 214, 230, 0.521);
     color: rgb(91 107 121 / 1);
     backdrop-filter: blur(10px);
-    left: 264px;
-    right: 0px;
+    padding-left: 264px;
+    transition: all 0.3s ease;
+    
+    &.wide_header {
+        padding-left: 0;
+    }
 }
 
 .header_wrapper {
@@ -22,46 +29,7 @@
 }
 
 .search_bar_wrapper {
-    display: flex;
-    align-items: center;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-left: 1rem;
-    padding-right: 1.5rem;
-    height: 74px;
-
-    span {
-        margin-right: 2ex;
-        font-size: 2.3ex;
-        cursor: pointer;
-    }
-
-    .input_wrapper {
-        position: relative;
-        display: flex;
-        align-items: center;
-
-        span {
-            position: absolute;
-            left: 10px;
-            color: #aaa;
-        }
-
-        input {
-            font-size: 2ex;
-            padding: 2ex 2ex 2ex 5ex;
-            border-radius: 8px;
-            width: 22em;
-            height: 5ex;
-            border: solid 1px #b9b4b4;
-
-            &:focus {
-                outline: none;
-                box-shadow: 0 0 .5em #363636d0;
-            }
-        }
-    }
-
+    @include search-bar-style;
 }
 
 .ms_auto {

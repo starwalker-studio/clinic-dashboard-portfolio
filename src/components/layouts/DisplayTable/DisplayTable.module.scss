@@ -16,45 +16,7 @@
 }
 
 .search_bar_wrapper {
-    display: flex;
-    align-items: center;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-left: 1rem;
-    padding-right: 1.5rem;
-    height: 74px;
-
-    span {
-        margin-right: 2ex;
-        font-size: 2.3ex;
-    }
-
-    .input_wrapper {
-        position: relative;
-        display: flex;
-        align-items: center;
-
-        span {
-            position: absolute;
-            left: 10px;
-            color: #aaa;
-        }
-
-        input {
-            font-size: 2ex;
-            padding: 2ex 2ex 2ex 5ex;
-            border-radius: 8px;
-            width: 22em;
-            height: 5ex;
-            border: solid 1px #b9b4b4;
-
-            &:focus {
-                outline: none;
-                box-shadow: 0 0 .5em #363636d0;
-            }
-        }
-    }
-
+    @include search-bar-style;
 }
 
 .search_results {
@@ -81,7 +43,7 @@
         transition: background-color 0.2s ease;
 
         &:hover {
-            background-color: #e3f2fd; // Azul claro médico
+            background-color: #e3f2fd;
         }
 
         &:not(:last-child) {
@@ -89,7 +51,6 @@
         }
     }
 
-    // Scrollbar más limpio
     &::-webkit-scrollbar {
         width: 6px;
     }
@@ -106,7 +67,7 @@
 
 .link {
     font-size: 0.95rem;
-    color: #0077b6; // azul médico
+    color: #0077b6;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.2s ease;
@@ -125,7 +86,7 @@
         color: #023e8a;
 
         &::after {
-            transform: translateX(3px); // sutil movimiento al pasar el cursor
+            transform: translateX(3px);
         }
     }
 
@@ -157,16 +118,9 @@
     min-width: 300px;
 }
 
-.patient_card {
+.person_card {
     @include card-style;
-    flex: 1;
-    min-width: 320px;
-    display: flex;
-    align-items: center;
-    opacity: 0;
-    transform: translateX(20px);
-    pointer-events: none;
-    transition: opacity 0.45s ease, transform 0.45s ease;
+    @include person-card-style;
 }
 
 .visible {
@@ -222,7 +176,7 @@
 
 .close_btn {
     margin-top: 15px;
-    background-color: #0077b6; // azul clínico
+    background-color: #0077b6;
     color: #fff;
     border: none;
     border-radius: 6px;
@@ -234,12 +188,12 @@
     transition: background-color 0.2s ease, box-shadow 0.2s ease;
 
     &:hover {
-        background-color: #005f8a; // tono más oscuro en hover
+        background-color: #005f8a;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
 
     &:active {
-        background-color: #004e73; // tono más profundo al presionar
+        background-color: #004e73;
     }
 }
 
@@ -252,26 +206,17 @@
 }
 
 .activo {
-    background-color: #0077b6;
+    @include badge-background-color(#0077b6);
 }
 
 .en_curso {
-    background-color: #ffb703;
+    @include badge-background-color(#ffb703);
 }
 
 .inactivo {
-    background-color: #e63946;
+    @include badge-background-color(#e63946);
 }
 
 .icon_background {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0.15;
-    font-size: 20em;
-    color: #1e90ff; // azul médico
-    filter: blur(4px); // 👈 da un efecto difuminado elegante
-    pointer-events: none;
-    z-index: 1;
+    @include icon-background-style;
 }

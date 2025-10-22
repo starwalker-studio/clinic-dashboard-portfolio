@@ -1,12 +1,16 @@
 import { ItemList } from './layout/ItemList';
 import style from './Sidebar.module.scss';
 
-export const Sidebar = () => {
+type SidebarProps = {
+    close?: boolean;
+}
+
+export const Sidebar = ({ close }: SidebarProps) => {
 
     const { clinicIcon, Content } = ItemList();
 
     return (
-        <nav className={style.desktop_sidebar}>
+        <nav className={`${style.desktop_sidebar} ${close ? style.closed : ''}`}>
             <div className={style.sidebar_wrapper}>
                 <div className={style.sidebar_header}>
                     <a href="/" className={style.brand_logo}>

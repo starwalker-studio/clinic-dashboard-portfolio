@@ -26,7 +26,7 @@ export const Pacients = () => {
             "status",
             "kind"
           ]}
-          itemsPerPage={10}
+          itemsPerPage={7}
           setData={e => setPatient(e)}
           pagination={true} />
       </DisplayTable>

@@ -1,5 +1,4 @@
 .simplebar_content {
-    // padding: 10px 0px;
     display: block;
     font-size: 11px;
     font-weight: 600;
@@ -29,7 +28,7 @@
         background-color: rgba(0, 0, 0, 0.359);
         border-right: 2px solid rgb(49, 255, 22);
     }
-
+    
     .item {
         color: rgb(232 237 247);
         position: relative;
@@ -40,6 +39,11 @@
         padding-bottom: 0.5rem;
         font-size: 0.875rem;
         text-decoration: none;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: rgba(43, 43, 43, 0.295);
+        }
 
         span {
             font-size: 14px;
