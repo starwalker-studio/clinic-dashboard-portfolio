@@ -1,7 +1,9 @@
 // import { type SetStateAction } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faUser, faBell, faMoon, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faUser, faMoon, faSearch, faSun } from '@fortawesome/free-solid-svg-icons';
 import style from './Header.module.scss';
+import { useTheme } from '../../../components/hooks/useTheme';
+import { Notifications } from './Notifications/Notifications';
 
 type HeaderProps = {
     handleOpenCloseSideBar: () => void;
@@ -10,10 +12,13 @@ type HeaderProps = {
 
 export const Header = ({ handleOpenCloseSideBar, close }: HeaderProps) => {
 
+    const { toggleTheme, theme } = useTheme();
+
     const bars = <FontAwesomeIcon icon={faBars} />
     const user = <FontAwesomeIcon icon={faUser} />
-    const bell = <FontAwesomeIcon icon={faBell} />
+    // const bell = <FontAwesomeIcon icon={faBell} />
     const dark = <FontAwesomeIcon icon={faMoon} />
+    const light = <FontAwesomeIcon icon={faSun} />
     const search = <FontAwesomeIcon icon={faSearch} />
 
     return (
@@ -30,8 +35,16 @@ export const Header = ({ handleOpenCloseSideBar, close }: HeaderProps) => {
                 </div>
                 <div className={style.ms_auto}>
                     <ul>
-                        <li>{dark}</li>
-                        <li className={style.icon_container}>{bell}<span className={style.bagde}>3</span></li>
+                        <li>
+                            <span style={{ cursor: 'pointer' }} onClick={toggleTheme}>
+                                {theme === "light" ? dark : light}
+                            </span>
+                        </li>
+                        <li>
+                            <div className={style.header_actions}>
+                                <Notifications />
+                            </div>
+                        </li>
                         <li>{user}Usuario</li>
                     </ul>
                 </div>

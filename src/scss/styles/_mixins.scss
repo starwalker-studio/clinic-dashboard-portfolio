@@ -1,10 +1,12 @@
+@forward '/src/scss/base/';
+
 @mixin padding-left-right {
     padding-left: 12px;
     padding-right: 12px;
 }
 
 @mixin contanier-style {
-    background-color: #fff;
+    background-color: var(--card-background-color);
     padding: 2rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -16,6 +18,7 @@
         font-weight: 500;
         margin-bottom: 0;
         font-size: 23px;
+        color: var(--h5-color-dark);
     }
 }
 
@@ -23,7 +26,7 @@
     width: 100%;
     padding: 20px;
     position: relative;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: var(--card-background-color);
     --tw-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.151);
     --tw-shadow-colored: 0 1px 20px 0 var(--tw-shadow-color);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -38,14 +41,14 @@
     line-height: 1.57;
     letter-spacing: .0125em;
     font-family: inherit;
-    color: rgb(140, 140, 140);
+    color: var(--h6-color);
     margin: 0;
 }
 
 @mixin title-style {
     margin-bottom: 32px;
     font-size: 1.1rem;
-    color: #555;
+    color: var(--title-style-color);
 }
 
 @mixin summary-card-style($color) {

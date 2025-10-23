@@ -1,4 +1,5 @@
 @use '/src/scss/styles/' as *;
+@forward '/src/scss/base/';
 
 .desktop_header {
     position: fixed;
@@ -7,7 +8,7 @@
     width: 100%;
     height: 74px;
     background-color: rgba(198, 214, 230, 0.521);
-    color: rgb(91 107 121 / 1);
+    color: var(--desktop-header-color);
     backdrop-filter: blur(10px);
     padding-left: 264px;
     transition: all 0.3s ease;
@@ -47,6 +48,7 @@
         margin: 0;
         padding: 0;
         list-style: none;
+        align-items: center;
     }
 
     li {
@@ -81,4 +83,10 @@
             align-items: center;
         }
     }
+}
+
+.header_actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }

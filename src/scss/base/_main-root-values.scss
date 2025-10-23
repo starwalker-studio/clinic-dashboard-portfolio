@@ -4,4 +4,35 @@
     --main-font-family: #{const.$main-font-family};
     --main-font-size: #{const.$main-font-size};
     --main-background-color: #{const.$main-background-color};
+    --h6-color: #{const.$h6-color};
+    --card-background-color: #{const.$card-background-color};
+    --desktop-sidebar-background-color: #{const.$desktop-sidebar-background-color};
+    --desktop-sidebar-box-shadow: #{const.$desktop-sidebar-box-shadow};
+    --desktop-header-color: #{const.$desktop-header-color};
+    --title-style-color: #{const.$title-style-color};
+    --title-link-color: #{const.$title-link-color};
+    --title-link-hover-color: #{const.$title-link-hover-color};
+    --summary-card-all-dates: #{const.$summary-card-all-dates};
+    --summary-card-complete: #{const.$summary-card-complete};
+    --summary-card-cancel: #{const.$summary-card-cancel};
+    --summary-card-on-course: #{const.$summary-card-on-course};
+    --notifications-background-color: #{const.$notifications-background-color};
+}
+
+[data-theme="dark"] {
+    --notifications-background-color: #{const.$notifications-background-color-dark};
+    --main-background-color: #{const.$main-background-color-dark};    
+    --h6-color: #{const.$h6-color-dark};
+    --card-background-color: #{const.$card-background-color-dark};
+    --h5-color-dark: #{const.$h5-color-dark};
+    --desktop-header-color: #{const.$desktop-header-color-dark};
+    --desktop-sidebar-background-color: #{const.$desktop-sidebar-background-color-dark};
+    --desktop-sidebar-box-shadow: #{const.$desktop-sidebar-box-shadow-dark};
+    --title-style-color: #{const.$title-style-color-dark};
+    --title-link-color: #{const.$title-link-color-dark};
+    --title-link-hover-color: #{const.$title-link-hover-color-dark};
+    --summary-card-all-dates: #{const.$summary-card-all-dates-dark};
+    --summary-card-complete: #{const.$summary-card-complete-dark};
+    --summary-card-cancel: #{const.$summary-card-cancel-dark};
+    --summary-card-on-course: #{const.$summary-card-on-course-dark};
 }
