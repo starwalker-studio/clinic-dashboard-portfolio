@@ -1,4 +1,5 @@
 @use '/src/scss/styles/' as *;
+@use '/src/scss/utils/' as *;
 
 .header_style {
     @include padding-left-right;
@@ -13,6 +14,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include mobile {
+        flex-direction: column;
+    }
 }
 
 .search_bar_wrapper {

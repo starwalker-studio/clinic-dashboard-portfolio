@@ -1,4 +1,5 @@
 @use '/src/scss/styles/' as *;
+@use '/src/scss/utils/' as *;
 @forward '/src/scss/base/';
 
 .desktop_header {
@@ -23,6 +24,10 @@
     flex-grow: 1;
     padding-left: 25px;
     padding-right: 25px;
+    @include mobile {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
 
 .search_bar_container {
@@ -42,6 +47,9 @@
     padding-left: 1rem;
     padding-right: 1.5rem;
     height: 74px;
+    @include mobile {
+        display: none;
+    }
 
     ul {
         display: inline-flex;
@@ -66,19 +74,14 @@
         span {
             position: absolute;
             top: -8px;
-            /* Adjust as needed for vertical positioning */
             right: -8px;
-            /* Adjust as needed for horizontal positioning */
             background-color: rgb(41, 215, 18);
             color: white;
             border-radius: 50%;
-            /* Makes it a circle */
             padding: 2px 7px;
-            /* Adjusts size and spacing */
             font-size: 10px;
             font-weight: bold;
             display: flex;
-            /* Centers the number within the badge */
             justify-content: center;
             align-items: center;
         }

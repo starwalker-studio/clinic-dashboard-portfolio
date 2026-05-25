@@ -1,25 +1,32 @@
 import { useState, type ReactNode } from "react";
-import { Sidebar } from "../../main/layouts/Sidebar/Sidebar";
-import style from './Dashboard.module.scss';
 import { Header } from "../../main/layouts/Header/Header";
+import { Sidebar } from "../../main/layouts/Sidebar/Sidebar";
+import { useMobileScreen } from "../hooks/useMobile";
+import style from "./Dashboard.module.scss";
 
 export const Dashboard = ({ children }: { children: ReactNode }) => {
+  const { isMobileScreen } = useMobileScreen();
 
-  const [close, setClose] = useState<boolean>();
+  const [close, setClose] = useState<boolean>(isMobileScreen);
 
   const handleOpenCloseSideBar = () => {
-    setClose(prevState => !prevState);
-  }
+    setClose((prevState) => !prevState);
+  };
 
   return (
     <>
       <Sidebar close={close} />
       <Header handleOpenCloseSideBar={handleOpenCloseSideBar} close={close} />
-      <div className={`${style.dashboard_container}${close ? style.wide_dashboard : ''}`}>
-        <div className={style.dashboard_content}>
-          {children}
-        </div>
+      <div
+        className={`${style.dashboard_container}${close ? style.wide_dashboard : ""}`}
+        onClick={() => {
+          if (isMobileScreen()) {
+            setClose(true);
+          }
+        }}
+      >
+        <div className={style.dashboard_content}>{children}</div>
       </div>
     </>
-  )
-}
+  );
+};

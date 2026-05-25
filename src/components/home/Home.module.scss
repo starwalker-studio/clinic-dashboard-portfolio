@@ -1,3 +1,4 @@
+@use '/src/scss/utils/' as *;
 @use '/src/scss/styles/' as *;
 
 .header_style {
@@ -10,20 +11,28 @@
     grid-template-columns: repeat(12, minmax(0, 1fr));
     column-gap: 1.5rem;
     @include padding-left-right;
+    @include mobile {
+        grid-template-columns: repeat(1, minmax(0, 1fr));   
+        padding: 1ex;     
+        gap: .5rem;
+    }
 }
 
 .flex_wrap {
     padding-top: 14px;
     padding-bottom: 12px;
     display: flex;
-    flex-wrap: nowrap; // nunca se apilan
-    overflow-x: auto; // si no caben, aparece scroll horizontal
-    gap: 1.5rem; // espacio entre charts
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1.5rem;
     width: 100%;
     overflow: hidden;
     padding-left: 12px;
     padding-right: 12px;
     margin-top: 1.5rem;
+    @include mobile {
+        flex-direction: column;
+    }
 }
 
 .col_wide_left {

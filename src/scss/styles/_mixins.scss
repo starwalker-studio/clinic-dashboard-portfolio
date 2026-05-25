@@ -1,4 +1,5 @@
 @forward '/src/scss/base/';
+@use '/src/scss/utils/' as *;
 
 @mixin padding-left-right {
     padding-left: 12px;
@@ -13,10 +14,14 @@
 
 @mixin header-style {
     margin-bottom: 1.5rem;
+    margin-top: 1.9rem;
+    @include mobile {
+        margin-top: 0;
+    }
 
     h5 {
+        margin: 0;
         font-weight: 500;
-        margin-bottom: 0;
         font-size: 23px;
         color: var(--h5-color-dark);
     }
