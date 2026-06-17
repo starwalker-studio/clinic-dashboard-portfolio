@@ -60,3 +60,21 @@
 .cancelada {
     background-color: #c52634;
 }
+
+.list_container {
+    @include contanier-style;
+    padding: 10px 22px;
+    ul {        
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 12px 0;
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1.2rem;
+        }
+    }
+}

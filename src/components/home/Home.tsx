@@ -1,11 +1,16 @@
-import { NavLink } from 'react-router';
-import { BarChart } from '../layouts/BarChart/BarChart';
-import { LineChart } from '../layouts/LineChart/LineChart';
-import { StatsCard } from '../layouts/StatsCard/StatsCard';
-import { Table } from '../layouts/Table/Table';
-import { DOCTORS, PATIENTS, TABLE_DOCTOR_HEADERS, TABLE_PATIENTS_HEADERS_HOME } from '../ts/clinic-data';
-import type { IDOCTORS, IPATIENTS } from '../ts/layouts-types';
-import style from './Home.module.scss';
+import { NavLink } from "react-router";
+import { BarChart } from "../layouts/BarChart/BarChart";
+import { LineChart } from "../layouts/LineChart/LineChart";
+import { StatsCard } from "../layouts/StatsCard/StatsCard";
+import { Table } from "../layouts/Table/Table";
+import {
+  DOCTORS,
+  PATIENTS,
+  TABLE_DOCTOR_HEADERS,
+  TABLE_PATIENTS_HEADERS_HOME,
+} from "../ts/clinic-data";
+import type { IDOCTORS, IPATIENTS } from "../ts/layouts-types";
+import style from "./Home.module.scss";
 
 export const Home = () => {
   return (
@@ -14,10 +19,38 @@ export const Home = () => {
         <h5>Dashboard</h5>
       </div>
       <div className={style.grid_columns}>
-        <StatsCard title={'Pacientes'} value={1245} percentage={78} trend='up' />
-        <StatsCard title={'Médicos'} value={85} percentage={65} trend='neutral' />
-        <StatsCard title={'Enfermeras'} value={150} percentage={80} trend='up' />
-        <StatsCard title={'Camas Disponibles'} value={90} percentage={45} trend='down' />
+        <div>
+          <StatsCard
+            title={"Pacientes"}
+            value={1245}
+            percentage={78}
+            trend="up"
+          />
+        </div>
+        <div>
+          <StatsCard
+            title={"Médicos"}
+            value={85}
+            percentage={65}
+            trend="neutral"
+          />
+        </div>
+        <div>
+          <StatsCard
+            title={"Enfermeras"}
+            value={150}
+            percentage={80}
+            trend="up"
+          />
+        </div>
+        <div>
+          <StatsCard
+            title={"Camas Disponibles"}
+            value={90}
+            percentage={45}
+            trend="down"
+          />
+        </div>
       </div>
       <div className={style.flex_wrap}>
         <div className={style.col_wide_left}>
@@ -47,14 +80,9 @@ export const Home = () => {
             <Table<IPATIENTS>
               title={TABLE_PATIENTS_HEADERS_HOME}
               data={PATIENTS}
-              excludeKeys={
-                [
-                  "id",
-                  "status",
-                  "kind"
-                ]
-              }
-              itemsPerPage={6} />
+              excludeKeys={["id", "status", "kind"]}
+              itemsPerPage={6}
+            />
           </div>
         </div>
       </div>
@@ -71,10 +99,11 @@ export const Home = () => {
               title={TABLE_DOCTOR_HEADERS}
               data={DOCTORS}
               excludeKeys={["id", "kind"]}
-              itemsPerPage={6} />
+              itemsPerPage={6}
+            />
           </div>
         </div>
       </div>
     </>
-  )
-}
+  );
+};

@@ -114,6 +114,9 @@
     padding-left: 1rem;
     padding-right: 1.5rem;
     height: 74px;
+    @include mobile {
+        padding: 0 12px;
+    }
 
     span {
         margin-right: 2ex;
@@ -138,6 +141,9 @@
             width: 22em;
             height: 5ex;
             border: solid 1px #b9b4b4;
+            @include mobile {
+                width: 100%;
+            }
 
             &:focus {
                 outline: none;

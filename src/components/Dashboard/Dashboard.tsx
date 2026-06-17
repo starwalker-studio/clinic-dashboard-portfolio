@@ -1,13 +1,13 @@
 import { useState, type ReactNode } from "react";
 import { Header } from "../../main/layouts/Header/Header";
 import { Sidebar } from "../../main/layouts/Sidebar/Sidebar";
-import { useMobileScreen } from "../hooks/useMobile";
+import { useMobileTabletScreen } from "../hooks/useMobileTablet";
 import style from "./Dashboard.module.scss";
 
 export const Dashboard = ({ children }: { children: ReactNode }) => {
-  const { isMobileScreen } = useMobileScreen();
+  const { isMobileOrTablet } = useMobileTabletScreen();
 
-  const [close, setClose] = useState<boolean>(isMobileScreen);
+  const [close, setClose] = useState<boolean>(isMobileOrTablet);
 
   const handleOpenCloseSideBar = () => {
     setClose((prevState) => !prevState);
@@ -20,7 +20,7 @@ export const Dashboard = ({ children }: { children: ReactNode }) => {
       <div
         className={`${style.dashboard_container}${close ? style.wide_dashboard : ""}`}
         onClick={() => {
-          if (isMobileScreen()) {
+          if (isMobileOrTablet()) {
             setClose(true);
           }
         }}

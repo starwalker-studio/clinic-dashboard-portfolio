@@ -1,5 +1,6 @@
 @forward '/src/scss/base/';
 @use '/src/scss/styles/' as *;
+@use "/src/scss/utils/" as *;
 
 .summary_flex {
     @include padding-left-right;
@@ -11,6 +12,16 @@
     overflow-x: auto;
     overflow: hidden;
     margin-bottom: 1.8rem;
+    @include mobile {
+        flex-direction: column;
+        column-gap: 1.5rem;
+        gap: 2ex;
+    }
+    @include tablet {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2ex;
+    }
 }
 
 .card_content {

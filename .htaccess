@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Si el archivo existe físicamente, sírvelo directo (js, css, imágenes)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Todo lo demás → index.html
+    RewriteRule ^ index.html [L]
+</IfModule>

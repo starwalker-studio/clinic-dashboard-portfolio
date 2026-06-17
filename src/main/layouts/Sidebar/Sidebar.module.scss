@@ -10,6 +10,7 @@
     background-color: var(--desktop-sidebar-background-color);
     box-shadow: var(--desktop-sidebar-box-shadow);
     transition: width 0.3s ease;
+    inset: 0;
 
     &.closed {
         width: 0;

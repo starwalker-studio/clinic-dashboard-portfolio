@@ -8,13 +8,20 @@
 
 .grid_columns {
     display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     column-gap: 1.5rem;
     @include padding-left-right;
     @include mobile {
         grid-template-columns: repeat(1, minmax(0, 1fr));   
+        column-gap: 1.5rem;
         padding: 1ex;     
-        gap: .5rem;
+        gap: 1.5rem;
+    }
+    @include tablet {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1.5rem;
+        padding: 1ex;     
+        gap: 1.5rem;
     }
 }
 
